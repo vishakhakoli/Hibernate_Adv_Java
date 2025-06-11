@@ -1,0 +1,34 @@
+# Eclipse specific
+/.project
+/.classpath
+/.settings/
+
+# Maven specific
+/target/
+
+# Eclipse working sets and other UI config
+*.launch
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDEs
+*.iml
+.idea/
+
+# Environment config
+*.env
+*.local
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Build tools
+/build/
+/out/
