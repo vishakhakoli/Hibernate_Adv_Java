@@ -4,6 +4,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+
+import com.adv.java.hibernate.Address;
 import com.adv.java.hibernate.entities.Student;  
 
 public class HibernateUtil {
@@ -20,10 +22,11 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.connection.password", "CRS_GOLD");
 
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
             configuration.setProperty("hibernate.show_sql", "true");
 
             configuration.addAnnotatedClass(Student.class);  
+            configuration.addAnnotatedClass(Address.class);  
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
