@@ -15,6 +15,24 @@ public class Student {
 	
 	@Column
 	private int passoutYear;
+	
+	private Certificate certi;
+
+	public Student(int id, String sName, int passoutYear, Certificate certi) {
+		super();
+		this.id = id;
+		this.sName = sName;
+		this.passoutYear = passoutYear;
+		this.certi = certi;
+	}
+
+	public Certificate getCerti() {
+		return certi;
+	}
+
+	public void setCerti(Certificate certi) {
+		this.certi = certi;
+	}
 
 	public Student(int id, String sName, int passoutYear) {
 		super();
