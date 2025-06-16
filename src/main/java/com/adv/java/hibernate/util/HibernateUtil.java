@@ -7,7 +7,9 @@ import org.hibernate.service.ServiceRegistry;
 
 import com.adv.java.hibernate.entities.Address;
 import com.adv.java.hibernate.entities.Certificate;
-import com.adv.java.hibernate.entities.Student;  
+import com.adv.java.hibernate.entities.Student;
+import com.adv.java.onetone.Answer;
+import com.adv.java.onetone.Question;  
 
 public class HibernateUtil {
 
@@ -29,6 +31,8 @@ public class HibernateUtil {
             configuration.addAnnotatedClass(Student.class);  
             configuration.addAnnotatedClass(Address.class); 
             configuration.addAnnotatedClass(Certificate.class);  
+            configuration.addAnnotatedClass(Question.class);
+            configuration.addAnnotatedClass(Answer.class);
 
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
