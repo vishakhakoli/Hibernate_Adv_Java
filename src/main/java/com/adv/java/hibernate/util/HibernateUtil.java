@@ -8,6 +8,8 @@ import org.hibernate.service.ServiceRegistry;
 import com.adv.java.hibernate.entities.Address;
 import com.adv.java.hibernate.entities.Certificate;
 import com.adv.java.hibernate.entities.Student;
+import com.adv.java.maytomany.Emp;
+import com.adv.java.maytomany.Project;
 import com.adv.java.onetomany.AnswerManyToOne;
 import com.adv.java.onetomany.QuestionOneToMany;
 /*import com.adv.java.onetone.Answer;
@@ -41,8 +43,12 @@ public class HibernateUtil {
 			 * configuration.addAnnotatedClass(Question.class);
 			 * configuration.addAnnotatedClass(Answer.class);
 			 */
-            configuration.addAnnotatedClass(QuestionOneToMany.class);
-            configuration.addAnnotatedClass(AnswerManyToOne.class);
+			/*
+			 * configuration.addAnnotatedClass(QuestionOneToMany.class);
+			 * configuration.addAnnotatedClass(AnswerManyToOne.class);
+			 */
+            configuration.addAnnotatedClass(Emp.class);
+            configuration.addAnnotatedClass(Project.class);
 
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
