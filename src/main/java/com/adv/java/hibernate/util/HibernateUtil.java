@@ -8,8 +8,12 @@ import org.hibernate.service.ServiceRegistry;
 import com.adv.java.hibernate.entities.Address;
 import com.adv.java.hibernate.entities.Certificate;
 import com.adv.java.hibernate.entities.Student;
-import com.adv.java.onetone.Answer;
-import com.adv.java.onetone.Question;  
+import com.adv.java.onetomany.AnswerManyToOne;
+import com.adv.java.onetomany.QuestionOneToMany;
+/*import com.adv.java.onetone.Answer;
+import com.adv.java.onetone.Question; */ 
+
+
 
 public class HibernateUtil {
 
@@ -28,11 +32,17 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.hbm2ddl.auto", "create");
             configuration.setProperty("hibernate.show_sql", "true");
 
-            configuration.addAnnotatedClass(Student.class);  
-            configuration.addAnnotatedClass(Address.class); 
-            configuration.addAnnotatedClass(Certificate.class);  
-            configuration.addAnnotatedClass(Question.class);
-            configuration.addAnnotatedClass(Answer.class);
+			/*
+			 * configuration.addAnnotatedClass(Student.class);
+			 * configuration.addAnnotatedClass(Address.class);
+			 * configuration.addAnnotatedClass(Certificate.class);
+			 */
+			/*
+			 * configuration.addAnnotatedClass(Question.class);
+			 * configuration.addAnnotatedClass(Answer.class);
+			 */
+            configuration.addAnnotatedClass(QuestionOneToMany.class);
+            configuration.addAnnotatedClass(AnswerManyToOne.class);
 
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
