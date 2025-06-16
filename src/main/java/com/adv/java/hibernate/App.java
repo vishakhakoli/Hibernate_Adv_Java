@@ -9,6 +9,7 @@ import java.util.Date;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.adv.java.hibernate.entities.Address;
 import com.adv.java.hibernate.entities.Student;
 import com.adv.java.hibernate.util.HibernateUtil;
 
@@ -20,14 +21,16 @@ public class App
         Transaction tx = session.beginTransaction();
         
         Student student = new Student();
-        student.setId(001);
-        student.setsName("Ravi");
-        student.setPassoutYear(2021);
+        student.setId(004);
+        student.setsName("Radha");
+        student.setPassoutYear(2022);
+        
+        
         System.out.println(student);
         
         Address address = new Address();
-        address.setCity("Sangli");
-        address.setStreet("Street1");
+        address.setCity("Dhule");
+        address.setStreet("Street4");
         address.setOpen(true);
         address.setAddedDate(new Date());
         address.setX(1.1);
@@ -47,6 +50,18 @@ public class App
         session.save(address);
         
         tx.commit();
+        
+       Student st= (Student)session.load(Student.class, 1);
+       Student st1= (Student)session.load(Student.class, 2);
+       System.out.println(st.getsName());
+       System.out.println(st1.getsName());
+       
+       Address sd = (Address)session.get(Address.class,1);
+       System.out.println(sd.getCity());
+       Address sd1 = (Address)session.get(Address.class,2);
+       System.out.println(sd1.getStreet());
+       
+   
         
         session.close();
         
