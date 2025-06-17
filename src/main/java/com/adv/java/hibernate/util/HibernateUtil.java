@@ -31,22 +31,24 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.connection.password", "CRS_GOLD");
 
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
             configuration.setProperty("hibernate.show_sql", "true");
             configuration.setProperty("hibernate.format_sql", "true");
 
-			/*
-			 * configuration.addAnnotatedClass(Student.class);
-			 * configuration.addAnnotatedClass(Address.class);
-			 * configuration.addAnnotatedClass(Certificate.class);
-			 */
+			
+			  configuration.addAnnotatedClass(Student.class);
+			  configuration.addAnnotatedClass(Address.class);
+			  configuration.addAnnotatedClass(Certificate.class);
+			 
 			/*
 			 * configuration.addAnnotatedClass(Question.class);
 			 * configuration.addAnnotatedClass(Answer.class);
 			 */
 			
-			  configuration.addAnnotatedClass(QuestionOneToMany.class);
-			  configuration.addAnnotatedClass(AnswerManyToOne.class);
+			/*
+			 * configuration.addAnnotatedClass(QuestionOneToMany.class);
+			 * configuration.addAnnotatedClass(AnswerManyToOne.class);
+			 */
 			 
 				/*
 				 * configuration.addAnnotatedClass(Emp.class);

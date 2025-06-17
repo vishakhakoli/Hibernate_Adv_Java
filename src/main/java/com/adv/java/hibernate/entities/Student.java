@@ -26,6 +26,11 @@ public class Student {
 		this.certi = certi;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", sName=" + sName + ", passoutYear=" + passoutYear + ", certi=" + certi + "]";
+	}
+
 	public Certificate getCerti() {
 		return certi;
 	}
