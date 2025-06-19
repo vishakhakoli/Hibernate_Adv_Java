@@ -42,7 +42,10 @@ public class OneToManyMapping {
 		 * a.add(ans1); a.add(ans2); que.setAnswer(a);
 		 * 
 		 * 
-		 * session.save(que); session.save(ans); session.save(ans1); session.save(ans2);
+		 * session.save(que); 
+		 * 
+		 * no need of this when using cascading
+		 * session.save(ans); session.save(ans1); session.save(ans2);
 		 * 
 		 * 
 		 * 
