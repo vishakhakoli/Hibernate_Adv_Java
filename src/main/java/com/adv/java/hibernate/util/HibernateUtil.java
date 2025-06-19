@@ -31,7 +31,7 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.connection.password", "CRS_GOLD");
 
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
             configuration.setProperty("hibernate.show_sql", "true");
             configuration.setProperty("hibernate.format_sql", "true");
 
@@ -45,10 +45,10 @@ public class HibernateUtil {
 			 * configuration.addAnnotatedClass(Answer.class);
 			 */
 			
-			/*
-			 * configuration.addAnnotatedClass(QuestionOneToMany.class);
-			 * configuration.addAnnotatedClass(AnswerManyToOne.class);
-			 */
+			
+			  configuration.addAnnotatedClass(QuestionOneToMany.class);
+			  configuration.addAnnotatedClass(AnswerManyToOne.class);
+			 
 			 
 				/*
 				 * configuration.addAnnotatedClass(Emp.class);
